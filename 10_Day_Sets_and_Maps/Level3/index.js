@@ -31,11 +31,7 @@ function mostSpokenLanguages(countries, num){
         mostSpokenLanguages.push({ language: lang, count: filteredLang.length })
     }
     // organizando o array em ordem descrescente
-    mostSpokenLanguages.sort((a, b) => {
-        if (a.count > b.count) return -1
-        if (a.count < b.count) return 1
-        return 0
-    })
+    mostSpokenLanguages.sort((a, b) => b.count-a.count);
     console.log(`As ${num} Líguas mais faladas são:`)
     // escrevendo no console apenas um determinado número de países
     for (let i = 0; i < num; i++) {
@@ -44,4 +40,4 @@ function mostSpokenLanguages(countries, num){
         console.log(`${mostSpokenLanguages[i].language} em ${mostSpokenLanguages[i].count} ${word}`)
     }
 }
-mostSpokenLanguages(countries,3)
+mostSpokenLanguages(countries,10)
